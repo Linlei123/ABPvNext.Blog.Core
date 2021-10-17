@@ -30,7 +30,7 @@ jobs:
         with: # 登录阿里云镜像服务器
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-          registry: docker login --username=318_monument registry.us-west-1.aliyuncs.com
+          registry: registry.us-west-1.aliyuncs.com/something_lzm/ll.blog.core
       - name: Build Image # 打包docker镜像
         run: docker build -t ${{ env.IMAGE_NAME_TAG }} ./aspnet-core/app
       - name: Push Image # 推送镜像
